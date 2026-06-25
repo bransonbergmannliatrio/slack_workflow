@@ -1,0 +1,22 @@
+name: Slack DM on run
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+    branches: [ "main" ]
+
+jobs:
+  dm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send DM
+        uses: slackapi/slack-github-action@v1.26.0
+        with:
+          payload: |
+            {
+              "text": "Workflow ran! Triggered by ${{ github.actor }} on ${{ github.repository }}"
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
