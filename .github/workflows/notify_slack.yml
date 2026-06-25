@@ -5,6 +5,8 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
     branches: [ "main" ]
+  schedule:
+    - cron: '40 15 * * 2-4'  # 8:40 AM PDT, Tue–Thu
 
 jobs:
   dm:
@@ -15,7 +17,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "Workflow ran! Triggered by ${{ github.actor }} on ${{ github.repository }}\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
+              "text": "Flywheel Standup meeting in 5\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
