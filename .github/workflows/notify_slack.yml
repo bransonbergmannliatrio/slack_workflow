@@ -15,7 +15,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "Workflow ran! Triggered by ${{ github.actor }} on ${{ github.repository }}"
+              "text": "Workflow ran! Triggered by ${{ github.actor }} on ${{ github.repository }}\n<${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|View run>"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
