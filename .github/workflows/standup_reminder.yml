@@ -3,6 +3,7 @@ name: Standup reminder
 on:
   schedule:
     - cron: '40 15 * * 2-4'  # 8:40 AM PDT, Tue–Thu
+  workflow_dispatch:
 
 jobs:
   notify:

@@ -10,3 +10,4 @@ jobs:
     with:
       message: "Time for a 10-minute break!"
     secrets: inherit
+    
