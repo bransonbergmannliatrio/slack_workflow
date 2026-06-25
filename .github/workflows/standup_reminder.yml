@@ -1,0 +1,12 @@
+name: Standup reminder
+
+on:
+  schedule:
+    - cron: '40 15 * * 2-4'  # 8:40 AM PDT, Tue–Thu
+
+jobs:
+  notify:
+    uses: ./.github/workflows/slack-dm.yml
+    with:
+      message: "Flywheel Standup meeting in 5"
+    secrets: inherit

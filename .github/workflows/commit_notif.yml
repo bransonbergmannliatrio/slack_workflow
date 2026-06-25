@@ -1,0 +1,11 @@
+name: Commit notification
+
+on:
+  push:
+
+jobs:
+  notify:
+    uses: ./.github/workflows/slack-dm.yml
+    with:
+      message: "New commit pushed to ${{ github.repository }} by ${{ github.actor }} — ${{ github.event.head_commit.message }}"
+    secrets: inherit
