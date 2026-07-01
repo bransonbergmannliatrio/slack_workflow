@@ -2,7 +2,7 @@ name: Break reminder
 
 on:
   schedule:
-    - cron: '30 21 * * 1-5'  # 2:30 PM PDT, Mon–Fri
+    - cron: '30 10 * * 1-5'  # 2:30 PM PDT, Mon–Fri
 
 jobs:
   notify:
